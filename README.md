@@ -13,6 +13,8 @@ This is using Go2 generics:
 - `./all.sh`
 - setup your GOROOT, GOPATH for this environment to ensure that you have a go2 env
 
+Run `./build` to build and execute it.  It turns go2 code into go code.
+
 ## A simple app to take advantage of generics, particularly for structs
 
 A set of automatically mergeable data structures for dealing with sharded databases that are gossiped together.
