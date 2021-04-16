@@ -3,7 +3,19 @@ package main
 import "fmt"
 import "github.com/rfielding/crdtb/crdto"
 
+type User struct {
+  First string
+  Last string
+}
+
 func main() {
-  o1 := crdto.Event{}
+  o1 := crdto.Event[User]{
+    Id: crdto.Ref{34,5999},
+    Created: 99,
+    Payload: User{
+      First: "rob",
+      Last: "fielding",
+    },
+  }
   fmt.Printf("%v", o1)
 }

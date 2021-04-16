@@ -10,7 +10,8 @@ type Ref struct {
 	Id EventId
 }
 
-type Event struct {
+type Event[T any] struct {
 	Id Ref
 	Created Tstamp
+	Payload T
 }
