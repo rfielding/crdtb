@@ -1,0 +1,4 @@
+#!/bin/bash
+
+go tool go2go translate */*.go2
+go tool go2go translate */*/*.go2
