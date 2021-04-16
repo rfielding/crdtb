@@ -1,0 +1,16 @@
+package crdto
+
+type Partition int64
+type EventId int64
+
+type Tstamp int64
+
+type Ref struct {
+	Partition Partition
+	Id EventId
+}
+
+type Event struct {
+	Id Ref
+	Created Tstamp
+}
