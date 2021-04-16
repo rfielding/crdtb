@@ -1,5 +1,19 @@
 #CRDTb
 
+## Prerequisites
+
+This is using Go2 generics:
+
+- make a directory to build go2
+- `got clone git@github.com:golang/go.git`
+- `cd go`
+- `git checkout dev.go2go`
+- `cd src`
+- `./all.sh`
+- setup your GOROOT, GOPATH for this environment to ensure that you have a go2 env
+
+## A simple app to take advantage of generics, particularly for structs
+
 A set of automatically mergeable data structures for dealing with sharded databases that are gossiped together.
 
 - Every shard is like a kafka partition.  Events within a `partition` are totally ordered.
