@@ -2,16 +2,19 @@ package crdto
 
 type Partition int64
 type EventId int64
-
+type RefIndex int
 type Tstamp int64
+type EventType string
 
 type Ref struct {
-	Partition Partition
-	Id EventId
+	Partition Partition  // The partition that originates this event
+	Id EventId           // The sequential id of this event
 }
 
 type Event[T any] struct {
-	Id Ref
-	Created Tstamp
-	Payload T
+	Id Ref          // parition:id of this object
+	Created Tstamp  // When we locally created this
+	EventType EventType // The type of object in payload
+	Backrefs []Ref  // Explicit causal references
+	Payload T       // Arbitrary payload
 }

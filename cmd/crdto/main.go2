@@ -6,16 +6,31 @@ import "github.com/rfielding/crdtb/crdto"
 type User struct {
   First string
   Last string
+  Manager crdto.RefIndex
 }
 
 func main() {
   o1 := crdto.Event[User]{
     Id: crdto.Ref{34,5999},
     Created: 99,
+    EventType: "user",
+    Backrefs: nil,
     Payload: User{
       First: "rob",
       Last: "fielding",
     },
   }
-  fmt.Printf("%v", o1)
+  o2 := crdto.Event[User]{
+    Id: crdto.Ref{34,6000},
+    Created: 100,
+    EventType: "user",
+    Backrefs: []crdto.Ref{o1.Id},
+    Payload: User{
+      First: "bob",
+      Last: "lazar",
+      Manager: 0,
+    },
+  }
+  fmt.Printf("%v\n", o1)
+  fmt.Printf("%v\n", o2)
 }
