@@ -2,3 +2,4 @@
 
 go tool go2go translate */*.go2
 go tool go2go translate */*/*.go2
+go run cmd/crdto/main.go
